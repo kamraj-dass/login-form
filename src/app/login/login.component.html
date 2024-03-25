@@ -1,0 +1,51 @@
+<div class="login-container">
+  <div class="register">
+    <h5 class="mobile-register-label"> Enter registered mobile and login</h5>
+    <input class="mobile-register-textbox" type="number" min=0><br />
+    <button class="sent-otp" type="submit"> Send OTP </button>
+  </div>
+
+  <div class="divider">-------------- OR ----------</div>
+
+
+  <div class="login">
+    <form [formGroup]="myForm">
+
+      <div>
+        <label class="login-label">
+          UserName
+        </label><br />
+
+        <input class="login-textbox" formControlName="username" placeholder="username">
+      </div>
+      <div>
+        <label class="login-label">
+          Password
+        </label><br />
+
+        <input class="login-textbox" type="password" formControlName="password" placeholder="Password">
+      </div>
+
+
+      <div class=" ">
+        <!-- <re-captcha id="recaptcha" name="recaptcha" #recaptcha="ngModel" [(ngModel)]="token" [ngModelOptions]="{standalone: true}" required
+          [class.is-invalid]="recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)"></re-captcha>
+        <div *ngIf="recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)" class="invalid-feedback">
+          <div *ngIf="recaptcha.errors?.['required']">This field is required.</div>
+        </div> -->
+
+        <re-captcha formControlName="recaptcha" (resolved)="addTokenLog('Reactive form mode resolved', $event)">
+        </re-captcha>
+      </div>
+
+      <p class="confimration">
+        Confirm that you are <b> 18+</b> Years Of age.
+      </p>
+      <input type="button" class="login-button" value="Login" (click)="login()" />
+
+      <p class="info">
+        Don't have an account ? <span class="register"> Register </span>
+      </p>
+    </form>
+  </div>
+</div>

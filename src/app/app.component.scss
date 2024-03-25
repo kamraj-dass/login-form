@@ -1,0 +1,35 @@
+.container {
+  width: 400px;
+  margin: auto;
+  background-color: #f5f5f5;
+  background: url("./../assets/images/bg-image.png");
+  background-size: cover;
+}
+
+.header-info {
+  background-color: #131a2c;
+  height: 100px;
+  .header-logo {
+    margin-top: 40px;
+  }
+  .register-account {
+    width: 70.25px;
+    background-color: #0094de;
+    font-family: Poppins;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 28.92px;
+    color: #ffffff;
+    border-radius: 5px;
+    border: 1px solid #0094de;
+    cursor: pointer;
+    float: right;
+    margin-right: 8px;
+    margin-top: 55px;
+  }
+}
+
+.content-container {
+  margin: 30px 20px;
+  min-height: 50vh;
+}
